@@ -6,14 +6,15 @@ public class PlayerMovement : MonoBehaviour
 {
     #region Variables
     [Header("Speed/Velocity References")]
+    public bool isSwinging;
     [SerializeField] private float speed = 5f;
     float XMov;
     float ZMov;
     private Vector3 velocity;
 
-    [Header("Running")]
-    public float runCooldown;
-    [SerializeField] private bool allowSprint;
+    [Header("Dashing")]
+    public float dashCooldown;
+    [SerializeField] private bool allowDash;
 
     [Header("Cursor/Sensetivity References")]
     [SerializeField] private float lookSensitivity = 3;
@@ -21,18 +22,26 @@ public class PlayerMovement : MonoBehaviour
     private float _currentCameraRotationX;
     private bool _isCursorLocked;
 
+    [Header("Jumping")]
+    [SerializeField] private Vector2 jumpForce;
+    [SerializeField] private int numberOfJumps;
+    [SerializeField] private bool isAbleToJump;
+
     [Header("Camera")]
     [SerializeField] private Camera fpsCamera;
 
     [Header("RigidBody")]
     [SerializeField] private Rigidbody rb;
 
+    [Header("Script References")]
+    [SerializeField] private Swing swingScript;
+
     #endregion
 
     // Start is called before the first frame update
     void Start()
     {
-        runCooldown = 10;
+        dashCooldown = 0;
         //get rigidbody component
         rb = GetComponent<Rigidbody>();
         //get the child camera component from the player (parent)
@@ -43,17 +52,18 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        RunCheck();
+        DashCheck();
         CursorCheck();
+        Jump();
 
         XMov = Input.GetAxis("Horizontal");
         ZMov = Input.GetAxis("Vertical");
 
         //Assigning the transformation positions for the x and z axis
-        Vector3 moveHorizontal = transform.right * XMov;
-        Vector3 moveVertical = transform.forward * ZMov;
+        Vector3 moveRight = transform.right * XMov;
+        Vector3 moveForward = transform.forward * ZMov;
 
-        velocity = (moveHorizontal + moveVertical) * speed;
+        velocity = (moveRight + moveForward) * speed;
 
         //Camera Rotation (looking left and right)
         float yRot = Input.GetAxisRaw("Mouse X");
@@ -72,30 +82,42 @@ public class PlayerMovement : MonoBehaviour
         fpsCamera.transform.localEulerAngles = new Vector3(_currentCameraRotationX, 0, 0);
     }
 
-    void RunCheck()
+    void Jump()
     {
-        if (Input.GetKey(KeyCode.LeftShift) && runCooldown > 0)
+        if (Input.GetKeyDown(KeyCode.Space) && numberOfJumps > 0 && !isSwinging)
         {
-            allowSprint = true;
+            rb.AddForce(jumpForce, ForceMode.Impulse);
+            numberOfJumps--;
         }
-        else if (runCooldown <= 0 || !Input.GetKey(KeyCode.LeftShift))
+    }
+
+    void DashCheck()
+    {
+        if (Input.GetKey(KeyCode.LeftShift) && dashCooldown <= 0)
         {
-            allowSprint = false;
+            allowDash = true;
+        }
+        else if (dashCooldown > 0 || !Input.GetKey(KeyCode.LeftShift))
+        {
+            allowDash = false;
         }
 
-        if (allowSprint)
+        if (allowDash)
         {
-            speed = 10;
-            runCooldown -= 5 * Time.deltaTime;
-        }
-        else if (!allowSprint)
-        {
-            speed = 5;
-            runCooldown += Time.deltaTime;
+            Vector3 dashDir = transform.forward.normalized;
 
-            if (runCooldown >= 10)
+            swingScript.StopSwing();
+
+            rb.AddForce(dashDir * 10, ForceMode.Impulse);
+            dashCooldown = 5;
+        }
+        else if (!allowDash)
+        {
+            dashCooldown -= Time.deltaTime;
+
+            if (dashCooldown <= 0)
             {
-                runCooldown = 10;
+                dashCooldown = 0;
             }
         }
     }
@@ -127,6 +149,9 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         //allow movement to happen
-        rb.MovePosition(rb.position + velocity * Time.deltaTime);
+        if (!isSwinging)
+        {
+            rb.MovePosition(rb.position + velocity * Time.deltaTime);
+        }
     }
 }

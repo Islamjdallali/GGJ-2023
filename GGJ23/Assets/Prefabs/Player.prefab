@@ -100,7 +100,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6476828305082675289}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ac66e42ed816b9244a5de5ad3a9e4ef6, type: 3}
   m_Name: 
@@ -197,7 +197,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6476828305376144417}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ac66e42ed816b9244a5de5ad3a9e4ef6, type: 3}
   m_Name: 
@@ -242,7 +242,7 @@ Transform:
   - {fileID: 6476828306375355890}
   - {fileID: 6476828305376144418}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6476828305862423882
 MeshFilter:
@@ -362,13 +362,14 @@ MonoBehaviour:
   allowDash: 0
   dashForce: 50
   lookSensitivity: 3
-  jumpForce: {x: 0, y: 5}
+  jumpForce: {x: 0, y: 10}
   numberOfJumps: 2
   isAbleToJump: 0
   fpsCamera: {fileID: 6476828305082675291}
   secondaryCamera: {fileID: 6476828305376144419}
   rb: {fileID: 0}
   swingScript: {fileID: 6476828305862423886}
+  speedlineGO: {fileID: 0}
 --- !u!114 &6476828305862423886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -387,8 +388,14 @@ MonoBehaviour:
   player: {fileID: 6476828305862423883}
   whatIsGrappleable:
     serializedVersion: 2
-    m_Bits: 4294967295
-  maxSwingDistance: 25
+    m_Bits: 192
+  unhighlightedGrappable:
+    serializedVersion: 2
+    m_Bits: 128
+  highlightedGrappable:
+    serializedVersion: 2
+    m_Bits: 64
+  maxSwingDistance: 100
   swingPoint: {x: 0, y: 0, z: 0}
   joint: {fileID: 0}
   orientation: {fileID: 6476828305862423883}
@@ -436,6 +443,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  defaultMat: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  highlightMat: {fileID: 2100000, guid: 8c954db59e40dce45aa4c6d0327a7699, type: 2}
 --- !u!120 &6476828305862423885
 LineRenderer:
   serializedVersion: 2

@@ -38,12 +38,16 @@ public class PlayerMovement : MonoBehaviour
     [Header("Script References")]
     [SerializeField] private Swing swingScript;
 
+    [Header("FX")]
+    [SerializeField] private GameObject speedlineGO;
+
     #endregion
 
     // Start is called before the first frame update
     void Start()
     {
         dashCooldown = 0;
+        speedlineGO.SetActive(false);
         //get rigidbody component
         rb = GetComponent<Rigidbody>();
         //get the child camera component from the player (parent)
@@ -57,6 +61,15 @@ public class PlayerMovement : MonoBehaviour
         DashCheck();
         CursorCheck();
         Jump();
+
+        if (rb.velocity.magnitude > 70)
+        {
+            speedlineGO.SetActive(true);
+        }
+        else
+        {
+            speedlineGO.SetActive(false);
+        }
 
         XMov = Input.GetAxis("Horizontal");
         ZMov = Input.GetAxis("Vertical");
@@ -89,6 +102,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && numberOfJumps > 0 && !isSwinging)
         {
+            rb.velocity = new Vector3(0, 0, 0);
             rb.AddForce(jumpForce, ForceMode.Impulse);
             numberOfJumps--;
         }

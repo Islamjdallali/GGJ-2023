@@ -10,6 +10,8 @@ public class Swing : MonoBehaviour
     [SerializeField] private Transform cam;
     [SerializeField] private Transform player;
     [SerializeField] private LayerMask whatIsGrappleable;
+    [SerializeField] private LayerMask unhighlightedGrappable;
+    [SerializeField] private LayerMask highlightedGrappable;
 
     [Header("Swinging")]
     [SerializeField] private float maxSwingDistance = 25f;
@@ -38,6 +40,11 @@ public class Swing : MonoBehaviour
     [SerializeField] private AnimationCurve effectCurve;
     [SerializeField] private Spring springScript;
 
+    [Header("Highlight")]
+    [SerializeField] private Material defaultMat;
+    [SerializeField] private Material highlightMat;
+    private Transform target;
+
     private void Awake()
     {
         springScript = new Spring();
@@ -47,11 +54,9 @@ public class Swing : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
-        {
-            StartSwing();
-        }
-        else if (Input.GetKeyUp(KeyCode.Mouse0))
+        StartSwing();
+
+        if (Input.GetKeyUp(KeyCode.Mouse0))
         {
             StopSwing();
         }
@@ -70,25 +75,36 @@ public class Swing : MonoBehaviour
     void StartSwing()
     {
         RaycastHit hit;
-        if (Physics.Raycast(cam.position,cam.forward,out hit, maxSwingDistance,whatIsGrappleable))
+        if (Physics.Raycast(cam.position, cam.forward, out hit, maxSwingDistance, whatIsGrappleable))
         {
-            playerMovementScript.isSwinging = true;
+            target = hit.transform;
 
-            swingPoint = hit.point;
-            joint = player.gameObject.AddComponent<SpringJoint>();
-            joint.autoConfigureConnectedAnchor = false;
-            joint.connectedAnchor = swingPoint;
+            target.gameObject.layer = LayerMask.NameToLayer("GrappableHighlighted");
 
-            float distanceFromPoint = Vector3.Distance(player.position,swingPoint);
+            if (Input.GetKeyDown(KeyCode.Mouse0))
+            {
+                playerMovementScript.isSwinging = true;
 
-            joint.maxDistance = distanceFromPoint * 0.8f;
-            joint.minDistance = distanceFromPoint * 0.25f;
+                swingPoint = hit.point;
+                joint = player.gameObject.AddComponent<SpringJoint>();
+                joint.autoConfigureConnectedAnchor = false;
+                joint.connectedAnchor = swingPoint;
 
-            joint.spring = 4.5f;
-            joint.damper = 7f;
-            joint.massScale = 4.5f;
+                float distanceFromPoint = Vector3.Distance(player.position, swingPoint);
 
-            currentGrapplePosition = swingTip.position;
+                joint.maxDistance = distanceFromPoint * 0.8f;
+                joint.minDistance = distanceFromPoint * 0.25f;
+
+                joint.spring = 4.5f;
+                joint.damper = 7f;
+                joint.massScale = 4.5f;
+
+                currentGrapplePosition = swingTip.position;
+            }
+        }
+        else if (target != null)
+        {
+            target.gameObject.layer = LayerMask.NameToLayer("GrappableUnhighlighted");
         }
     }
 

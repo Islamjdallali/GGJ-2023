@@ -9,7 +9,11 @@ Shader "Custom/Gameboy"
     }
         SubShader
         {
-            Tags { "RenderType" = "Opaque" }
+            Tags 
+            { 
+                "RenderType" = "Opaque" 
+                "Queue" = "Background"
+            }
             LOD 100
 
             Pass

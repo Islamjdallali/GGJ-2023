@@ -19,9 +19,11 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Cursor/Sensetivity References")]
     [SerializeField] private float lookSensitivity = 3;
+    [SerializeField] private GameObject pauseMenu;
+    [SerializeField] private Animator pauseMenuAnim;
     private int _rotationMax = 85;
     private float _currentCameraRotationX;
-    private bool _isCursorLocked;
+    public bool _isCursorLocked;
 
     [Header("Jumping")]
     [SerializeField] private Vector2 jumpForce;
@@ -157,11 +159,13 @@ public class PlayerMovement : MonoBehaviour
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
+            pauseMenuAnim.Play("PauseOut");
         }
         else
         {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
+            pauseMenu.SetActive(true);
         }
     }
 

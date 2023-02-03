@@ -23,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Animator pauseMenuAnim;
     private int _rotationMax = 85;
     private float _currentCameraRotationX;
-    public bool _isCursorLocked;
+    public bool isCursorLocked;
 
     [Header("Jumping")]
     [SerializeField] private Vector2 jumpForce;
@@ -155,7 +155,7 @@ public class PlayerMovement : MonoBehaviour
             ToggleCursor();
         }
 
-        if (_isCursorLocked)
+        if (isCursorLocked)
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
@@ -171,7 +171,7 @@ public class PlayerMovement : MonoBehaviour
 
     void ToggleCursor()
     {
-        _isCursorLocked = !_isCursorLocked;
+        isCursorLocked = !isCursorLocked;
     }
 
     private void FixedUpdate()

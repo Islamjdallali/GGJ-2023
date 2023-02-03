@@ -9,6 +9,7 @@ public class PauseManager : MonoBehaviour
     [SerializeField] private Animator resumeButtonAnim;
 
     [SerializeField] private GameObject pauseCanvas;
+    [SerializeField] private GameObject paletteCanvas;
 
     [SerializeField] private PlayerMovement playerMovementScript;
 
@@ -28,11 +29,13 @@ public class PauseManager : MonoBehaviour
         {
             buttons[i].interactable = true;
         }
+
+        paletteCanvas.SetActive(false);
     }
 
     public void TurnOffPause()
     {
-        playerMovementScript._isCursorLocked = true;
+        playerMovementScript.isCursorLocked = true;
         pauseCanvas.SetActive(false);
     }
 
@@ -41,4 +44,11 @@ public class PauseManager : MonoBehaviour
         buttons[(int)EButtons.EResume].interactable = false;
         resumeButtonAnim.Play("Pressed");
     }
+
+    public void Palette()
+    {
+        buttons[(int)EButtons.EPalette].interactable = false;
+        resumeButtonAnim.Play("Pressed");
+    }
+
 }

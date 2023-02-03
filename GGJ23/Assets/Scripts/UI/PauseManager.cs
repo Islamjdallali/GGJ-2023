@@ -7,6 +7,7 @@ public class PauseManager : MonoBehaviour
 {
     [SerializeField] private Animator pauseMenuAnim;
     [SerializeField] private Animator resumeButtonAnim;
+    [SerializeField] private Animator paletteButtonAnim;
 
     [SerializeField] private GameObject pauseCanvas;
     [SerializeField] private GameObject paletteCanvas;
@@ -48,7 +49,7 @@ public class PauseManager : MonoBehaviour
     public void Palette()
     {
         buttons[(int)EButtons.EPalette].interactable = false;
-        resumeButtonAnim.Play("Pressed");
+        paletteButtonAnim.Play("PressedPalette");
     }
 
 }

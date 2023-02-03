@@ -116,7 +116,9 @@ public class PlayerMovement : MonoBehaviour
 
             swingScript.StopSwing();
 
-            rb.AddForce(dashDir * 10, ForceMode.Impulse);
+            rb.velocity = new Vector3(0, 0, 0);
+
+            rb.AddForce(dashDir * dashForce, ForceMode.Impulse);
             dashCooldown = 1;
         }
         else if (!allowDash)

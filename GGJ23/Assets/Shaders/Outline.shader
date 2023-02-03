@@ -8,6 +8,9 @@ Shader "Custom/Outline"
 		_MainTex("Texture", 2D) = "white" {}
 		[IntRange]_Threshold("Cel threshold", Range(1, 20)) = 5
 		_Ambient("Ambient intensity", Range(0., 0.5)) = 0.1
+		_NoiseScale("Noise Scale",Range(0,2)) = 1
+		_OutlineNoiseScale("OutlineNoise Scale",Range(0,2)) = 1
+		_NoiseSnap("Noise Snap",Range(0,1)) = 0.5
     }
     SubShader
     {
@@ -82,22 +85,34 @@ Shader "Custom/Outline"
 			struct appdata
 			{
 				float4 vertex : POSITION;
+				float3 normal : NORMAL;
 			};
 
 			struct v2f
 			{
 				float4 vertex : SV_POSITION;
+				float3 normal : NORMAL;
 			};
 
-			float _OutlineWidth;
+			float _OutlineWidth, _OutlineNoiseScale, _NoiseSnap;
 			float4 _OutlineColor;
+
+			float3 rand(float3 co)
+			{
+				return frac(sin(dot(co.xy, float2(12.9898, 78.233))) * 43758.5453) - 0.5f;
+			}
+
+			inline float snap(float x, float snap)
+			{
+				return snap * round(x / snap);
+			}
+
 
 			v2f vert(appdata v)
 			{
 				v2f o;
 				v.vertex.xyz *= _OutlineWidth;
 				o.vertex = UnityObjectToClipPos(v.vertex);
-
 				return o;
 			}
 

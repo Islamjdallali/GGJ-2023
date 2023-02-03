@@ -69,11 +69,11 @@ public class Swing : MonoBehaviour
 
     void StartSwing()
     {
-        playerMovementScript.isSwinging = true;
-
         RaycastHit hit;
         if (Physics.Raycast(cam.position,cam.forward,out hit, maxSwingDistance,whatIsGrappleable))
         {
+            playerMovementScript.isSwinging = true;
+
             swingPoint = hit.point;
             joint = player.gameObject.AddComponent<SpringJoint>();
             joint.autoConfigureConnectedAnchor = false;
@@ -172,8 +172,5 @@ public class Swing : MonoBehaviour
             Vector3 offset = right * waveHeight * Mathf.Sin(delta * waveCount * Mathf.PI * springScript.Value * effectCurve.Evaluate(delta));
             lr.SetPosition(i, Vector3.Lerp(swingTip.position, currentGrapplePosition,delta) + offset);
         }
-
-        //lr.SetPosition(0, swingTip.position);
-        //lr.SetPosition(1, swingPoint);
     }
 }

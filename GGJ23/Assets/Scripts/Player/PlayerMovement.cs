@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Dashing")]
     public float dashCooldown;
     [SerializeField] private bool allowDash;
+    [SerializeField] private float dashForce;
 
     [Header("Cursor/Sensetivity References")]
     [SerializeField] private float lookSensitivity = 3;
@@ -29,6 +30,7 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Camera")]
     [SerializeField] private Camera fpsCamera;
+    [SerializeField] private Camera secondaryCamera;
 
     [Header("RigidBody")]
     [SerializeField] private Rigidbody rb;
@@ -80,6 +82,7 @@ public class PlayerMovement : MonoBehaviour
         //Clamp the cameras Y rotation so that the player's Y rotation is see up to +- 85 degrees
         _currentCameraRotationX = Mathf.Clamp(_currentCameraRotationX, -_rotationMax, _rotationMax);
         fpsCamera.transform.localEulerAngles = new Vector3(_currentCameraRotationX, 0, 0);
+        secondaryCamera.transform.localEulerAngles = new Vector3(_currentCameraRotationX, 0, 0);
     }
 
     void Jump()
@@ -88,6 +91,11 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.AddForce(jumpForce, ForceMode.Impulse);
             numberOfJumps--;
+        }
+
+        if (isSwinging)
+        {
+            numberOfJumps = 2;
         }
     }
 
@@ -109,7 +117,7 @@ public class PlayerMovement : MonoBehaviour
             swingScript.StopSwing();
 
             rb.AddForce(dashDir * 10, ForceMode.Impulse);
-            dashCooldown = 5;
+            dashCooldown = 1;
         }
         else if (!allowDash)
         {

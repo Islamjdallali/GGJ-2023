@@ -5,6 +5,9 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     #region Variables
+    [Header("StartGame")]
+    [SerializeField] private Vector3 launchForce;
+
     [Header("Speed/Velocity References")]
     public bool isSwinging;
     [SerializeField] private float speed = 5f;
@@ -52,6 +55,9 @@ public class PlayerMovement : MonoBehaviour
         speedlineGO.SetActive(false);
         //get rigidbody component
         rb = GetComponent<Rigidbody>();
+
+        rb.AddForce(launchForce, ForceMode.Impulse);
+
         //get the child camera component from the player (parent)
         fpsCamera = gameObject.GetComponentInChildren<Camera>();
         ToggleCursor();

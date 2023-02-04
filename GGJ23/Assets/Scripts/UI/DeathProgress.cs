@@ -16,14 +16,19 @@ public class DeathProgress : MonoBehaviour
 
     [SerializeField] private float target;
     [SerializeField] private float currentScore;
+    [SerializeField] private float gainedScore;
     [SerializeField] private float addedScore;
 
     [SerializeField] private float accel;
 
+    [SerializeField] private GameObject buttons;
+
+    [SerializeField] private Button[] paletteButtons;
+    [SerializeField] private int unlockedPalettes;
+
     private bool isStartProgressBar;
 
-    // Start is called before the first frame update
-    void Start()
+    private void OnEnable()
     {
         isStartProgressBar = false;
         timerText.text = "Time : " + scoreCounterScript.timer.ToString("F2");
@@ -35,6 +40,12 @@ public class DeathProgress : MonoBehaviour
         accel = 1;
 
         barImage.fillAmount = currentScore;
+
+        gainedScore = scoreCounterScript.distance;
+
+        addedScore = currentScore + gainedScore;
+
+        buttons.SetActive(false);
     }
 
     // Update is called once per frame
@@ -46,12 +57,35 @@ public class DeathProgress : MonoBehaviour
 
             accel += Time.deltaTime * 20;
 
+            if (currentScore > addedScore)
+            {
+                currentScore = addedScore;
+                PlayerPrefs.SetFloat("CurrentScore", currentScore);
+
+                StartCoroutine(ShowButtons());
+            }
+
             barImage.fillAmount = currentScore / target;
         }
+    }
+
+    IEnumerator ShowButtons()
+    {
+        yield return new WaitForSeconds(1);
+
+        buttons.SetActive(true);
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     public void ToggleStartProgressBar()
     {
         isStartProgressBar = true;
+    }
+
+    void UnlockPalette()
+    {
+        unlockedPalettes++;
     }
 }

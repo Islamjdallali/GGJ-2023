@@ -10078,7 +10078,7 @@ Transform:
   - {fileID: 358655975}
   - {fileID: 592038969}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6476828305862423882
 MeshFilter:
@@ -10192,6 +10192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 989962f2364256245ab1e296d3ffacd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  launchForce: {x: 0, y: 25, z: 50}
   isSwinging: 0
   speed: 5
   dashCooldown: 0
@@ -10206,7 +10207,7 @@ MonoBehaviour:
   isAbleToJump: 0
   fpsCamera: {fileID: 6476828305082675291}
   secondaryCamera: {fileID: 6476828305376144419}
-  rb: {fileID: 0}
+  rb: {fileID: 6476828305862423927}
   swingScript: {fileID: 6476828305862423886}
   speedlineGO: {fileID: 1362459769377812061}
 --- !u!114 &6476828305862423886
@@ -10403,10 +10404,10 @@ MonoBehaviour:
   isDead: 0
   deathCanvas: {fileID: 0}
   deathCamera: {fileID: 358655974}
-  deathFX: {fileID: 0}
+  deathFX: {fileID: 592038966}
   scoreCounterScript: {fileID: 0}
-  playerMovementScript: {fileID: 0}
-  swingScript: {fileID: 0}
+  playerMovementScript: {fileID: 6476828305862423884}
+  swingScript: {fileID: 6476828305862423886}
 --- !u!1 &6476828306375355889
 GameObject:
   m_ObjectHideFlags: 0

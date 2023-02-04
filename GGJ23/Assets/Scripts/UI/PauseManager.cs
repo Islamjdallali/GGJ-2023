@@ -13,6 +13,7 @@ public class PauseManager : MonoBehaviour
     [SerializeField] private GameObject paletteCanvas;
 
     [SerializeField] private PlayerMovement playerMovementScript;
+    [SerializeField] private Vector3 playerVelocity;
 
     [SerializeField] private Button[] buttons;
 
@@ -26,12 +27,19 @@ public class PauseManager : MonoBehaviour
 
     private void OnEnable()
     {
+        Time.timeScale = 0;
+
         for (int i = 0; i < buttons.Length; i++)
         {
             buttons[i].interactable = true;
         }
 
         paletteCanvas.SetActive(false);
+    }
+
+    public void OnDisable()
+    {
+        Time.timeScale = 1;
     }
 
     public void TurnOffPause()

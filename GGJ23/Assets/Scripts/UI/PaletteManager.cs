@@ -9,8 +9,10 @@ public class PaletteManager : MonoBehaviour
     [SerializeField] private int numberOfPalettes;
 
 
-    public void Palette1()
+    public void PalettePicked(int paletteNo)
     {
-        mat.SetFloat("_PaletteNumber", (numberOfPalettes - 1) / 1);
+        mat.SetFloat("_PaletteNumber", (float)paletteNo / numberOfPalettes);
+
+        Debug.Log(paletteNo / numberOfPalettes);
     }
 }

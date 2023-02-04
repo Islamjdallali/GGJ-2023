@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -69,6 +70,11 @@ public class PlayerMovement : MonoBehaviour
         DashCheck();
         CursorCheck();
         Jump();
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene("level");
+        }
 
         if (rb.velocity.magnitude > 70)
         {

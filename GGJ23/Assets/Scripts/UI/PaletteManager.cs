@@ -14,9 +14,25 @@ public class PaletteManager : MonoBehaviour
 
     [SerializeField] private Button paletteMenuButton;
 
+    [SerializeField] private Button[] paletteButtons;
+
+    [SerializeField] private int unlockedPalettes;
+
     private void Start()
     {
         paletteManagerAnim = GetComponent<Animator>();
+
+        unlockedPalettes = PlayerPrefs.GetInt("UnlockedPalettes", 1);
+
+        for (int i = 0; i < paletteButtons.Length; i++)
+        {
+            paletteButtons[i].interactable = false;
+        }
+
+        for (int i = 0; i < unlockedPalettes; i++)
+        {
+            paletteButtons[i].interactable = true;
+        }
     }
 
 

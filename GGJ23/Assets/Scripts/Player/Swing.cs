@@ -10,8 +10,6 @@ public class Swing : MonoBehaviour
     [SerializeField] private Transform cam;
     [SerializeField] private Transform player;
     [SerializeField] private LayerMask whatIsGrappleable;
-    [SerializeField] private LayerMask unhighlightedGrappable;
-    [SerializeField] private LayerMask highlightedGrappable;
 
     [Header("Swinging")]
     [SerializeField] private float maxSwingDistance = 25f;
@@ -79,8 +77,6 @@ public class Swing : MonoBehaviour
         {
             target = hit.transform;
 
-            target.gameObject.layer = LayerMask.NameToLayer("GrappableHighlighted");
-
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
                 playerMovementScript.isSwinging = true;
@@ -101,10 +97,6 @@ public class Swing : MonoBehaviour
 
                 currentGrapplePosition = swingTip.position;
             }
-        }
-        else if (target != null)
-        {
-            target.gameObject.layer = LayerMask.NameToLayer("GrappableUnhighlighted");
         }
     }
 

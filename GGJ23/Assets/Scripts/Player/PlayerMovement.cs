@@ -53,6 +53,9 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         dashCooldown = 0;
+
+        fpsCamera.fieldOfView = 120;
+
         speedlineGO.SetActive(false);
         //get rigidbody component
         rb = GetComponent<Rigidbody>();
@@ -67,6 +70,13 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        fpsCamera.fieldOfView -= Time.deltaTime * 500;
+
+        if (fpsCamera.fieldOfView <= 60)
+        {
+            fpsCamera.fieldOfView = 60;
+        }
+
         DashCheck();
         CursorCheck();
         Jump();

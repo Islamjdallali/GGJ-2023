@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 using TMPro;
 
@@ -14,6 +15,7 @@ public class DeathProgress : MonoBehaviour
 
     [SerializeField] private Image barImage;
 
+    [Header("Stats")]
     [SerializeField] private float target;
     [SerializeField] private float currentScore;
     [SerializeField] private float gainedScore;
@@ -23,8 +25,9 @@ public class DeathProgress : MonoBehaviour
 
     [SerializeField] private GameObject buttons;
 
-    [SerializeField] private Button[] paletteButtons;
+    [Header("Unlock Palettes")]
     [SerializeField] private int unlockedPalettes;
+    [SerializeField] private GameObject unlockPaletteText;
 
     private bool isStartProgressBar;
 
@@ -46,6 +49,7 @@ public class DeathProgress : MonoBehaviour
         addedScore = currentScore + gainedScore;
 
         buttons.SetActive(false);
+        unlockPaletteText.SetActive(false);
     }
 
     // Update is called once per frame
@@ -53,16 +57,23 @@ public class DeathProgress : MonoBehaviour
     {
         if (isStartProgressBar)
         {
-            currentScore += Time.deltaTime * accel;
+            if (currentScore < addedScore)
+            {
+                currentScore += Time.deltaTime * accel;
+                accel += Time.deltaTime * 20;
+            }
 
-            accel += Time.deltaTime * 20;
-
-            if (currentScore > addedScore)
+            if (currentScore >= addedScore)
             {
                 currentScore = addedScore;
                 PlayerPrefs.SetFloat("CurrentScore", currentScore);
 
                 StartCoroutine(ShowButtons());
+            }
+
+            if (currentScore > target)
+            {
+                UnlockPalette();
             }
 
             barImage.fillAmount = currentScore / target;
@@ -86,6 +97,27 @@ public class DeathProgress : MonoBehaviour
 
     void UnlockPalette()
     {
+        unlockPaletteText.SetActive(true);
+
+        unlockedPalettes = PlayerPrefs.GetInt("UnlockedPalettes", 1);
+
         unlockedPalettes++;
+
+        PlayerPrefs.SetInt("UnlockedPalettes", unlockedPalettes);
+
+        PlayerPrefs.SetFloat("CurrentScore", 0);
+
+        currentScore = 0;
+        addedScore = 0;
+    }
+
+    public void Retry()
+    {
+        SceneManager.LoadScene("level");
+    }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("Main Menu");
     }
 }

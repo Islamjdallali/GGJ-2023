@@ -86,11 +86,11 @@ public class PlayerMovement : MonoBehaviour
             SceneManager.LoadScene("level");
         }
 
-        if (rb.velocity.magnitude > 70)
+        if (rb.velocity.magnitude >= 100)
         {
             speedlineGO.SetActive(true);
         }
-        else
+        else if (rb.velocity.magnitude < 100)
         {
             speedlineGO.SetActive(false);
         }
@@ -120,6 +120,7 @@ public class PlayerMovement : MonoBehaviour
         _currentCameraRotationX = Mathf.Clamp(_currentCameraRotationX, -_rotationMax, _rotationMax);
         fpsCamera.transform.localEulerAngles = new Vector3(_currentCameraRotationX, 0, 0);
         secondaryCamera.transform.localEulerAngles = new Vector3(_currentCameraRotationX, 0, 0);
+        speedlineGO.transform.localEulerAngles = new Vector3(_currentCameraRotationX - 165, 0, 0);
     }
 
     void Jump()

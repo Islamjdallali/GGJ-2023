@@ -7947,6 +7947,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1362459769377812034, guid: bac9d29e006b49041ab5ceff688e356f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.13052626
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362459769377812034, guid: bac9d29e006b49041ab5ceff688e356f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.9914449
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362459769377812034, guid: bac9d29e006b49041ab5ceff688e356f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362459769377812034, guid: bac9d29e006b49041ab5ceff688e356f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362459769377812034, guid: bac9d29e006b49041ab5ceff688e356f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -165
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362459769377812035, guid: bac9d29e006b49041ab5ceff688e356f, type: 3}
+      propertyPath: m_Flip.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6476828305082675291, guid: bac9d29e006b49041ab5ceff688e356f, type: 3}
       propertyPath: field of view
       value: 60

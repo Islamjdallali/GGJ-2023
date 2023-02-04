@@ -5593,6 +5593,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1277825345}
   m_CullTransparentMesh: 1
+--- !u!4 &1286975627 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1286975627, guid: 122c435b4da991546a9bb003213b6609, type: 3}
+  m_PrefabInstance: {fileID: 2583595376975970070}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1308045357
 GameObject:
   m_ObjectHideFlags: 0
@@ -7156,7 +7161,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1618487956
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9200,14 +9205,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2583595377117023729, guid: 122c435b4da991546a9bb003213b6609, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2583595377484604961, guid: 122c435b4da991546a9bb003213b6609, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3545084695727309898, guid: 122c435b4da991546a9bb003213b6609, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -9216,21 +9213,25 @@ PrefabInstance:
       propertyPath: m_CullingMask.m_Bits
       value: 87
       objectReference: {fileID: 0}
-    - target: {fileID: 8806955413638715982, guid: 122c435b4da991546a9bb003213b6609, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8806955413798225459, guid: 122c435b4da991546a9bb003213b6609, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8806955413798225460, guid: 122c435b4da991546a9bb003213b6609, type: 3}
       propertyPath: m_CullingMask.m_Bits
-      value: 32
+      value: 160
       objectReference: {fileID: 0}
     - target: {fileID: 8806955413798225462, guid: 122c435b4da991546a9bb003213b6609, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8806955414451756889, guid: 122c435b4da991546a9bb003213b6609, type: 3}
+      propertyPath: predictionPoint
+      value: 
+      objectReference: {fileID: 1286975627}
+    - target: {fileID: 8806955414451756889, guid: 122c435b4da991546a9bb003213b6609, type: 3}
+      propertyPath: predictionSphereCastRadius
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8806955414451756891, guid: 122c435b4da991546a9bb003213b6609, type: 3}
       propertyPath: pauseMenu
@@ -9292,8 +9293,7 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 8806955413798225459, guid: 122c435b4da991546a9bb003213b6609, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

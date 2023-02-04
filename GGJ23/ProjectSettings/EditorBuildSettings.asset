@@ -9,6 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Menu.unity
     guid: c24acc37a18f4ef4f8b934a4f374149c
   - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: 797bca96e56349a408853d954b9bcd63
+  - enabled: 1
+    path: Assets/Scenes/Countdown.unity
+    guid: 9b447abeabe96c94691893b233563b77
+  - enabled: 1
     path: Assets/Scenes/level.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects: {}

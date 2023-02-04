@@ -113,7 +113,7 @@ public class DeathProgress : MonoBehaviour
 
     public void Retry()
     {
-        SceneManager.LoadScene("level");
+        SceneManager.LoadScene("Countdown");
     }
 
     public void MainMenu()

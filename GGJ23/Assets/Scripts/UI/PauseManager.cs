@@ -48,6 +48,11 @@ public class PauseManager : MonoBehaviour
         pauseCanvas.SetActive(false);
     }
 
+    public void ShowPaletteMenu()
+    {
+        paletteCanvas.SetActive(true);
+    }
+
     public void Resume()
     {
         buttons[(int)EButtons.EResume].interactable = false;

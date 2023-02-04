@@ -1,0 +1,98 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &2583595376926157335
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6476828305082675291, guid: bac9d29e006b49041ab5ceff688e356f, type: 3}
+      propertyPath: field of view
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 6476828305376144417, guid: bac9d29e006b49041ab5ceff688e356f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6476828305862423883, guid: bac9d29e006b49041ab5ceff688e356f, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6476828305862423883, guid: bac9d29e006b49041ab5ceff688e356f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6476828305862423883, guid: bac9d29e006b49041ab5ceff688e356f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6476828305862423883, guid: bac9d29e006b49041ab5ceff688e356f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6476828305862423883, guid: bac9d29e006b49041ab5ceff688e356f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6476828305862423883, guid: bac9d29e006b49041ab5ceff688e356f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6476828305862423883, guid: bac9d29e006b49041ab5ceff688e356f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6476828305862423883, guid: bac9d29e006b49041ab5ceff688e356f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6476828305862423883, guid: bac9d29e006b49041ab5ceff688e356f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6476828305862423883, guid: bac9d29e006b49041ab5ceff688e356f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6476828305862423883, guid: bac9d29e006b49041ab5ceff688e356f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6476828305862423884, guid: bac9d29e006b49041ab5ceff688e356f, type: 3}
+      propertyPath: launchForce.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6476828305862423884, guid: bac9d29e006b49041ab5ceff688e356f, type: 3}
+      propertyPath: launchForce.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6476828305862423886, guid: bac9d29e006b49041ab5ceff688e356f, type: 3}
+      propertyPath: whatIsGrappleable.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 6476828305862423886, guid: bac9d29e006b49041ab5ceff688e356f, type: 3}
+      propertyPath: unhighlightedGrappable.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6476828305862423926, guid: bac9d29e006b49041ab5ceff688e356f, type: 3}
+      propertyPath: m_Name
+      value: Tutorial Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8002884521762668678, guid: bac9d29e006b49041ab5ceff688e356f, type: 3}
+      propertyPath: deathCanvas
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8002884521762668678, guid: bac9d29e006b49041ab5ceff688e356f, type: 3}
+      propertyPath: scoreCounterScript
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8002884521762668678, guid: bac9d29e006b49041ab5ceff688e356f, type: 3}
+    m_RemovedGameObjects:
+    - {fileID: 358655974, guid: bac9d29e006b49041ab5ceff688e356f, type: 3}
+    - {fileID: 592038966, guid: bac9d29e006b49041ab5ceff688e356f, type: 3}
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bac9d29e006b49041ab5ceff688e356f, type: 3}

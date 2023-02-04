@@ -75,7 +75,7 @@ Material:
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
-    - _PaletteNumber: 0
+    - _PaletteNumber: 0.375
     - _Parallax: 0.02
     - _PixelSize: 0.003
     - _SmoothnessTextureChannel: 0

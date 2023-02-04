@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 458748875}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 20, z: 200}
-  m_LocalScale: {x: 1000, y: 1000, z: 1}
+  m_LocalScale: {x: 2000, y: 2000, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1362459771237426309}
@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 1362459769162205689}
   - component: {fileID: 1362459769160911321}
   - component: {fileID: 1362459769159912217}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SmallRock_03 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -218,7 +218,7 @@ GameObject:
   - component: {fileID: 1362459769298723012}
   - component: {fileID: 1362459769301623012}
   - component: {fileID: 1362459769300492836}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BigRock_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -301,7 +301,7 @@ GameObject:
   - component: {fileID: 1362459769464068305}
   - component: {fileID: 1362459769463298289}
   - component: {fileID: 1362459769462299185}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SmallRock_03 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -419,7 +419,7 @@ GameObject:
   - component: {fileID: 1362459769488477121}
   - component: {fileID: 1362459769487378689}
   - component: {fileID: 1362459769491487073}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RockFormation_06
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -524,7 +524,7 @@ GameObject:
   - component: {fileID: 1362459769630510615}
   - component: {fileID: 1362459769631280695}
   - component: {fileID: 1362459769632410871}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RockFormation_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -608,7 +608,7 @@ GameObject:
   - component: {fileID: 1362459769725573577}
   - component: {fileID: 1362459769726671625}
   - component: {fileID: 1362459769722579817}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RockFormation_02 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -714,7 +714,7 @@ GameObject:
   - component: {fileID: 1362459770056824701}
   - component: {fileID: 1362459770055693757}
   - component: {fileID: 360306231}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: SmallPlant_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -764,7 +764,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8c954db59e40dce45aa4c6d0327a7699, type: 2}
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -820,7 +820,7 @@ GameObject:
   - component: {fileID: 1362459770064039624}
   - component: {fileID: 1362459770065005576}
   - component: {fileID: 1362459770060971112}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RockFormation_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -925,7 +925,7 @@ GameObject:
   - component: {fileID: 1362459770064386089}
   - component: {fileID: 1362459770061518857}
   - component: {fileID: 1362459770062617289}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SmallRock_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1009,7 +1009,7 @@ GameObject:
   - component: {fileID: 1362459770247365840}
   - component: {fileID: 1362459770246366736}
   - component: {fileID: 1362459770242020976}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RockFormation_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1115,7 +1115,7 @@ GameObject:
   - component: {fileID: 1362459770265063950}
   - component: {fileID: 1362459770266161358}
   - component: {fileID: 1362459770262069422}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RockFormation_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1221,7 +1221,7 @@ GameObject:
   - component: {fileID: 1362459770269386635}
   - component: {fileID: 1362459770270483787}
   - component: {fileID: 1362459770274526507}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RockFormation_07
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1383,7 +1383,7 @@ GameObject:
   - component: {fileID: 1362459770335799163}
   - component: {fileID: 1362459770336929211}
   - component: {fileID: 1362459770341283291}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: SmalRoots_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1433,7 +1433,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8c954db59e40dce45aa4c6d0327a7699, type: 2}
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1488,7 +1488,7 @@ GameObject:
   - component: {fileID: 1362459770378613370}
   - component: {fileID: 1362459770377286234}
   - component: {fileID: 1362459770376188058}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RockFormation_05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1571,7 +1571,7 @@ GameObject:
   - component: {fileID: 1362459770549346883}
   - component: {fileID: 1362459770550674019}
   - component: {fileID: 1362459770551771299}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RockFormation_05 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1654,7 +1654,7 @@ GameObject:
   - component: {fileID: 1362459770640840914}
   - component: {fileID: 1362459770643740914}
   - component: {fileID: 1362459770642741810}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SmallRock_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1737,7 +1737,7 @@ GameObject:
   - component: {fileID: 1362459770791448717}
   - component: {fileID: 1362459770794840237}
   - component: {fileID: 1362459770793874029}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SmallRock_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1821,7 +1821,7 @@ GameObject:
   - component: {fileID: 1362459770879711483}
   - component: {fileID: 1362459770880711227}
   - component: {fileID: 1362459770380055008}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: BigPlant_05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1871,7 +1871,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8c954db59e40dce45aa4c6d0327a7699, type: 2}
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1926,7 +1926,7 @@ GameObject:
   - component: {fileID: 1362459770946518107}
   - component: {fileID: 1362459770949385339}
   - component: {fileID: 1362459770948419259}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SmallRock_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2009,7 +2009,7 @@ GameObject:
   - component: {fileID: 1362459770954301378}
   - component: {fileID: 1362459770950909922}
   - component: {fileID: 1362459770951875874}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SmallRock_04 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2092,7 +2092,7 @@ GameObject:
   - component: {fileID: 1362459771125851334}
   - component: {fileID: 1362459771122427110}
   - component: {fileID: 1362459771123426854}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SmallRock_04 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2175,7 +2175,7 @@ GameObject:
   - component: {fileID: 1362459771133624986}
   - component: {fileID: 1362459771132330682}
   - component: {fileID: 1362459771131330682}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RockFormation_01 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2258,7 +2258,7 @@ GameObject:
   - component: {fileID: 1362459771206618905}
   - component: {fileID: 1362459771209486137}
   - component: {fileID: 1362459771208388089}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BigRock_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2399,7 +2399,7 @@ GameObject:
   - component: {fileID: 1341852011797959748}
   - component: {fileID: 1349450435007272282}
   - component: {fileID: 1300906653498612500}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Terrain (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2505,7 +2505,7 @@ GameObject:
   - component: {fileID: 1341852011415832740}
   - component: {fileID: 1349450434616691130}
   - component: {fileID: 1300906653343008756}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2611,7 +2611,7 @@ GameObject:
   - component: {fileID: 1341852013035696437}
   - component: {fileID: 1349450434106109995}
   - component: {fileID: 1300906651720941157}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Terrain (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2718,7 +2718,7 @@ GameObject:
   - component: {fileID: 2188712987608049424}
   - component: {fileID: 7867944711223035928}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Deathbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2821,7 +2821,7 @@ GameObject:
   - component: {fileID: 6613435469093234010}
   - component: {fileID: 6613435469096101242}
   - component: {fileID: 6613435469095004090}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SmallRock_04 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2904,7 +2904,7 @@ GameObject:
   - component: {fileID: 6613435469616711642}
   - component: {fileID: 6613435469613844474}
   - component: {fileID: 6613435469614810426}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SmallRock_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2987,7 +2987,7 @@ GameObject:
   - component: {fileID: 6613435470312587385}
   - component: {fileID: 6613435470309687385}
   - component: {fileID: 6613435470310687385}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SmallRock_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3070,7 +3070,7 @@ GameObject:
   - component: {fileID: 6613435470571065068}
   - component: {fileID: 6613435470572359372}
   - component: {fileID: 6613435470573358092}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RockFormation_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3154,7 +3154,7 @@ GameObject:
   - component: {fileID: 6613435471047418705}
   - component: {fileID: 6613435471046287761}
   - component: {fileID: 6613435471050314225}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RockFormation_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}

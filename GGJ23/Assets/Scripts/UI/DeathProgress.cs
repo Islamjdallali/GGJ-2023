@@ -25,6 +25,11 @@ public class DeathProgress : MonoBehaviour
 
     [SerializeField] private GameObject buttons;
 
+    [Header("SFX")]
+    [SerializeField] private AudioSource statSFX;
+    [SerializeField] private AudioSource progressbarSFX;
+    [SerializeField] private AudioSource unlockPaletteSFX;
+
     [Header("Unlock Palettes")]
     [SerializeField] private int unlockedPalettes;
     [SerializeField] private GameObject unlockPaletteText;
@@ -60,6 +65,9 @@ public class DeathProgress : MonoBehaviour
             if (currentScore < addedScore)
             {
                 currentScore += Time.deltaTime * accel;
+                progressbarSFX.gameObject.SetActive(true);
+                InvokeRepeating("PlayProgressSFX", 1, 0.5f);
+                progressbarSFX.pitch += Time.deltaTime * 0.1f;
                 accel += Time.deltaTime * 20;
             }
 
@@ -82,12 +90,27 @@ public class DeathProgress : MonoBehaviour
 
     IEnumerator ShowButtons()
     {
+
         yield return new WaitForSeconds(1);
 
         buttons.SetActive(true);
 
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+    }
+
+    public IEnumerator PlayProgressAudio()
+    {
+        while(currentScore < addedScore)
+        {
+            progressbarSFX.Play();
+            yield return new WaitForSeconds(0.05f);
+        }
+    }
+
+    public void PlayStatsAudio()
+    {
+        statSFX.Play();
     }
 
     public void ToggleStartProgressBar()
@@ -98,6 +121,7 @@ public class DeathProgress : MonoBehaviour
     void UnlockPalette()
     {
         unlockPaletteText.SetActive(true);
+        unlockPaletteSFX.Play();
 
         unlockedPalettes = PlayerPrefs.GetInt("UnlockedPalettes", 1);
 

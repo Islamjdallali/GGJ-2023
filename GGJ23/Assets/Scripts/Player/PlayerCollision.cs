@@ -9,6 +9,12 @@ public class PlayerCollision : MonoBehaviour
     [SerializeField] private GameObject deathCanvas;
     [SerializeField] private GameObject deathCamera;
     [SerializeField] private GameObject deathFX;
+    [SerializeField] private GameObject speedlineGO;
+    [SerializeField] private GameObject predictionPoint;
+
+    [Header("SFX")]
+    [SerializeField] private AudioSource deathSFX;
+    [SerializeField] private AudioSource windSFX;
 
     private MeshRenderer playerRenderer;
     private Rigidbody rb;
@@ -36,19 +42,38 @@ public class PlayerCollision : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.gameObject.layer != 7
-            && collision.collider.gameObject.layer != 8)
+        if ((collision.collider.gameObject.layer != 7
+            && collision.collider.gameObject.layer != 8))
         {
-            isDead = true;
-            playerMovementScript.enabled = false;
-            swingScript.enabled = false;
-            playerRenderer.enabled = false;
-            rb.velocity = new Vector3(0, 0, 0);
-            rb.useGravity = false;
-            deathFX.SetActive(true);
-            deathCamera.SetActive(true);
-            StartCoroutine(PlayerDeath());
+            Death();
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("deathwall"))
+        {
+            Death();
+        }
+    }
+
+    void Death()
+    {
+        isDead = true;
+        GameObject.FindGameObjectWithTag("Music").GetComponent<AudioSource>().Stop();
+        deathSFX.Play();
+        deathSFX.Stop();
+        playerMovementScript.enabled = false;
+        predictionPoint.SetActive(false);
+        speedlineGO.SetActive(false);
+        swingScript.enabled = false;
+        playerRenderer.enabled = false;
+        rb.velocity = new Vector3(0, 0, 0);
+        rb.useGravity = false;
+        deathFX.SetActive(true);
+        deathCamera.SetActive(true);
+        this.gameObject.GetComponent<Collider>().enabled = false;
+        StartCoroutine(PlayerDeath());
     }
 
     IEnumerator PlayerDeath()

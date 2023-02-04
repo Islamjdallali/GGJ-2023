@@ -16,6 +16,9 @@ public class Swing : MonoBehaviour
     [SerializeField] Vector3 swingPoint;
     [SerializeField] SpringJoint joint;
 
+    [Header("SFX")]
+    [SerializeField] private AudioSource grappleSFX;
+
     private Vector3 currentGrapplePosition;
 
     [Header("SwingMovement")]
@@ -86,6 +89,8 @@ public class Swing : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             playerMovementScript.isSwinging = true;
+
+            grappleSFX.Play();
 
             predictionPoint.gameObject.SetActive(false);
 

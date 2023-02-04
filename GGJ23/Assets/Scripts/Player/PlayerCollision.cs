@@ -43,6 +43,7 @@ public class PlayerCollision : MonoBehaviour
             playerMovementScript.enabled = false;
             swingScript.enabled = false;
             playerRenderer.enabled = false;
+            rb.velocity = new Vector3(0, 0, 0);
             rb.useGravity = false;
             deathFX.SetActive(true);
             deathCamera.SetActive(true);

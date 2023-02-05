@@ -7,27 +7,22 @@ public class MainMenuManager : MonoBehaviour
 {
     [SerializeField] private GameObject paletteCanvas;
 
+    [SerializeField] private Animator playGameAnim;
+    [SerializeField] private Animator paletteAnim;
+    [SerializeField] private Animator quitGameAnim;
+
     public void PlayGame()
     {
-        int tutorialDone = PlayerPrefs.GetInt("tutorial", 0);
-
-        if (tutorialDone == 0)
-        {
-            SceneManager.LoadScene("Tutorial");
-        }
-        else
-        {
-            SceneManager.LoadScene("Countdown");
-        }
+        playGameAnim.Play("PlayButtonPressed");
     }
 
     public void ShowPaletteMenu()
     {
-        paletteCanvas.SetActive(true);
+        paletteAnim.Play("PaletteButtonPressed");
     }
 
     public void QuitGame()
     {
-        Application.Quit();
+        quitGameAnim.Play("QuitButtonPressed");
     }
 }

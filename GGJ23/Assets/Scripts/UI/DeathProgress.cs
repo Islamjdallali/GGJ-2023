@@ -24,6 +24,8 @@ public class DeathProgress : MonoBehaviour
     [SerializeField] private float accel;
 
     [SerializeField] private GameObject buttons;
+    [SerializeField] private Animator retryButtonAnim;
+    [SerializeField] private Animator quitButtonAnim;
 
     [Header("SFX")]
     [SerializeField] private AudioSource statSFX;
@@ -136,11 +138,11 @@ public class DeathProgress : MonoBehaviour
 
     public void Retry()
     {
-        SceneManager.LoadScene("Countdown");
+        retryButtonAnim.Play("RetryButtonPressed");
     }
 
     public void MainMenu()
     {
-        SceneManager.LoadScene("Main Menu");
+        quitButtonAnim.Play("QuitButtonPressed");
     }
 }

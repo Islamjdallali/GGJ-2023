@@ -20,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
     public float dashCooldown;
     [SerializeField] private bool allowDash;
     [SerializeField] private float dashForce;
+    [SerializeField] private AudioSource dashSFX;
 
     [Header("Cursor/Sensetivity References")]
     [SerializeField] private float lookSensitivity = 3;
@@ -158,6 +159,7 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = new Vector3(0, 0, 0);
 
             rb.AddForce(dashDir * dashForce, ForceMode.Impulse);
+            dashSFX.Play();
             dashCooldown = 1;
         }
         else if (!allowDash)

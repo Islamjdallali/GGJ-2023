@@ -6,7 +6,7 @@ public class VolumeManager : MonoBehaviour
 {
     public GameObject volumeManager;
 
-    [SerializeField] private int volume = 10;
+    [SerializeField] private int volume = 5;
 
     void Awake()
     {

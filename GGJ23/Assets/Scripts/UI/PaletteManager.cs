@@ -45,6 +45,8 @@ public class PaletteManager : MonoBehaviour
     {
         mat.SetFloat("_PaletteNumber", (float)paletteNo / numberOfPalettes);
         uiMat.SetFloat("_PaletteNumber", (float)paletteNo / numberOfPalettes);
+
+        PlayerPrefs.SetFloat("PaletteNo", (float)paletteNo / numberOfPalettes);
     }
 
     public void Back()

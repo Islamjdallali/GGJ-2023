@@ -29,6 +29,6 @@ public class deathwall : MonoBehaviour
             }
         }
 
-        gameObject.transform.position += new Vector3(0, 0, speed * Time.deltaTime);
+        gameObject.transform.position += new Vector3(0, -10 * Time.deltaTime, speed * Time.deltaTime);
     }
 }

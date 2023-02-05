@@ -867,7 +867,7 @@ ParticleSystem:
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
-    m_Scale: {x: 1000, y: 1000, z: 1}
+    m_Scale: {x: 1000, y: 5000, z: 1}
     placementMode: 0
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
@@ -9029,7 +9029,7 @@ Transform:
   m_GameObject: {fileID: 827281403}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -200}
-  m_LocalScale: {x: 1000, y: 1000, z: 5}
+  m_LocalScale: {x: 1000, y: 5000, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 73545094}

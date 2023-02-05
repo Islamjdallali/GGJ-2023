@@ -27,6 +27,8 @@ public class PathGenerator : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        gameObject.GetComponent<Collider>().enabled = false;
+
         Instantiate(paths[randNo], transform.position + offset, Quaternion.identity);
     }
 }

@@ -24,7 +24,7 @@ public class deathwall : MonoBehaviour
 
             if (timer <= 0)
             {
-                speed += 50;
+                speed += 20;
                 timer = timeTillSpeedup;
             }
         }

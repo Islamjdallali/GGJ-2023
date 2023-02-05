@@ -1830,7 +1830,7 @@ Transform:
   m_GameObject: {fileID: 3961276753208727779}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 20, z: 200}
-  m_LocalScale: {x: 2000, y: 2000, z: 10}
+  m_LocalScale: {x: 5000, y: 5000, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2598900006296407981}
@@ -1922,6 +1922,9 @@ MonoBehaviour:
   paths:
   - {fileID: 2598900006296407980}
   - {fileID: 1362459771237426308, guid: 87abb8ac88a6bc349b983815ba9ee4c7, type: 3}
+  - {fileID: 3655203630746178789, guid: 116a5e532d703e6438c3ca897d69d424, type: 3}
+  - {fileID: 7374093890882409684, guid: 75e34762940bd4b46a92acc1b279979c, type: 3}
+  - {fileID: 3646576775881900702, guid: 0096771dfd05aee408cb4e7a0795068f, type: 3}
   timeTillDeath: 100
   offset: {x: 0, y: -295, z: 775}
   randNo: 0

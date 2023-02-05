@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class ResetScoreManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject resetScoreGO;
+
+    void Awake()
     {
-        
+        if (resetScoreGO != null && resetScoreGO != this)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            resetScoreGO = this.gameObject;
+            DontDestroyOnLoad(this.gameObject);
+        }
     }
 
-    // Update is called once per frame
     void Update()
-    {
+        {
         if (Input.GetKeyDown(KeyCode.V))
         {
             PlayerPrefs.DeleteAll();

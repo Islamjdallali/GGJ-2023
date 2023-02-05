@@ -27,6 +27,6 @@ public class PathGenerator : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Instantiate(paths[randNo], transform.position + offset, Quaternion.identity);
+        Instantiate(paths[1], transform.position + offset, Quaternion.identity);
     }
 }

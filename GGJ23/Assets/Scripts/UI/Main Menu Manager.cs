@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class MainMenuManager : MonoBehaviour
 {
+    [SerializeField] private GameObject paletteCanvas;
+
     public void PlayGame()
     {
         int tutorialDone = PlayerPrefs.GetInt("tutorial", 0);
@@ -19,9 +21,9 @@ public class MainMenuManager : MonoBehaviour
         }
     }
 
-    public void Palette()
+    public void ShowPaletteMenu()
     {
-
+        paletteCanvas.SetActive(true);
     }
 
     public void QuitGame()

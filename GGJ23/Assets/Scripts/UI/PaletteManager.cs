@@ -24,6 +24,11 @@ public class PaletteManager : MonoBehaviour
 
         unlockedPalettes = PlayerPrefs.GetInt("UnlockedPalettes", 1);
 
+        if (unlockedPalettes >= paletteButtons.Length)
+        {
+            unlockedPalettes = paletteButtons.Length;
+        }
+
         for (int i = 0; i < paletteButtons.Length; i++)
         {
             paletteButtons[i].interactable = false;

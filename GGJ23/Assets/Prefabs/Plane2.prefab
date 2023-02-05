@@ -2377,6 +2377,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mushrooms
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 15455b0168cd0b44a868ce81f1fdd6d9, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 15455b0168cd0b44a868ce81f1fdd6d9, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -2454,6 +2458,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 54c459b31c67ca945922815bff6e3d96, type: 3}
       propertyPath: m_Name
       value: BigPlant_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 54c459b31c67ca945922815bff6e3d96, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 54c459b31c67ca945922815bff6e3d96, type: 3}
       propertyPath: m_RootOrder
@@ -2533,6 +2541,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RockFormation_06
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: cf833ef2eab66b44286c07b4aba4f3eb, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: cf833ef2eab66b44286c07b4aba4f3eb, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -2610,6 +2622,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: ec55ac038e536864295d9fe81cbce0d6, type: 3}
       propertyPath: m_Name
       value: Tenticles_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ec55ac038e536864295d9fe81cbce0d6, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ec55ac038e536864295d9fe81cbce0d6, type: 3}
       propertyPath: m_RootOrder

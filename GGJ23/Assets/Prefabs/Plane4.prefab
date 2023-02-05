@@ -2842,6 +2842,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grass_01 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 060c6905cbfcb604aa70b0104e423aeb, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 060c6905cbfcb604aa70b0104e423aeb, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -2920,6 +2924,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grass_01 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 060c6905cbfcb604aa70b0104e423aeb, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 060c6905cbfcb604aa70b0104e423aeb, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -2997,6 +3005,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 060c6905cbfcb604aa70b0104e423aeb, type: 3}
       propertyPath: m_Name
       value: Grass_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 060c6905cbfcb604aa70b0104e423aeb, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 060c6905cbfcb604aa70b0104e423aeb, type: 3}
       propertyPath: m_RootOrder

@@ -4202,7 +4202,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: GGJ GAME
+  m_text: Root swing
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: daf57dd337f939b499c4ba95d668b367, type: 2}
   m_sharedMaterial: {fileID: 4217010891061869281, guid: daf57dd337f939b499c4ba95d668b367, type: 2}

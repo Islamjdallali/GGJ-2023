@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class ButtomAnimController : MonoBehaviour
@@ -19,5 +20,10 @@ public class ButtomAnimController : MonoBehaviour
         {
             paletteCanvas.SetActive(true);
         }
+    }
+
+    public void GoToMainMenu()
+    {
+        SceneManager.LoadScene("Main Menu");
     }
 }

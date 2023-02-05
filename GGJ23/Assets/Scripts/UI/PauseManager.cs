@@ -8,6 +8,7 @@ public class PauseManager : MonoBehaviour
     [SerializeField] private Animator pauseMenuAnim;
     [SerializeField] private Animator resumeButtonAnim;
     [SerializeField] private Animator paletteButtonAnim;
+    [SerializeField] private Animator menuButtonAnim;
 
     [SerializeField] private GameObject pauseCanvas;
     [SerializeField] private GameObject paletteCanvas;
@@ -55,14 +56,29 @@ public class PauseManager : MonoBehaviour
 
     public void Resume()
     {
-        buttons[(int)EButtons.EResume].interactable = false;
+        for (int i = 0; i < buttons.Length; i++)
+        {
+            buttons[i].interactable = false;
+        }
         resumeButtonAnim.Play("Pressed");
     }
 
     public void Palette()
     {
-        buttons[(int)EButtons.EPalette].interactable = false;
+        for (int i = 0; i < buttons.Length; i++)
+        {
+            buttons[i].interactable = false;
+        }
         paletteButtonAnim.Play("PressedPalette");
+    }
+
+    public void MainMenu()
+    {
+        for (int i = 0; i < buttons.Length; i++)
+        {
+            buttons[i].interactable = false;
+        }
+        menuButtonAnim.Play("PressedMainMenu");
     }
 
 }

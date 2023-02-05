@@ -12,7 +12,7 @@ public class PaletteManager : MonoBehaviour
 
     [SerializeField] private int numberOfPalettes;
 
-    [SerializeField] private Button paletteMenuButton;
+    [SerializeField] private Button[] menuButton;
 
     [SerializeField] private Button[] paletteButtons;
 
@@ -45,7 +45,11 @@ public class PaletteManager : MonoBehaviour
     public void Back()
     {
         paletteManagerAnim.Play("PaletteOut");
-        paletteMenuButton.interactable = true;
+
+        for (int i = 0; i < menuButton.Length; i++)
+        {
+            menuButton[i].interactable = true;
+        }
     }
 
     public void DisableManager()

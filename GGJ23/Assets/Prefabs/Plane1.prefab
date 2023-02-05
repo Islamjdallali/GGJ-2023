@@ -118,7 +118,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68977e803d93c854b9cd022152420c94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parent: {fileID: 1362459771237426308}
   paths:
   - {fileID: 1362459771237426308}
   timeTillDeath: 100
@@ -2381,9 +2380,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68977e803d93c854b9cd022152420c94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parent: {fileID: 0}
   paths:
   - {fileID: 1362459771237426308}
+  - {fileID: 2598900006296407980, guid: 3f49a087fb59e4f43b4cd2071abd3390, type: 3}
   timeTillDeath: 500
   offset: {x: 0, y: -275, z: 975}
   randNo: 0

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PathGenerator : MonoBehaviour
 {
-    [SerializeField] private GameObject parent;
     [SerializeField] private GameObject[] paths;
     [SerializeField] private float timeTillDeath;
     [SerializeField] private Vector3 offset;

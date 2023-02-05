@@ -62,7 +62,6 @@ public class PlayerCollision : MonoBehaviour
         isDead = true;
         GameObject.FindGameObjectWithTag("Music").GetComponent<AudioSource>().Stop();
         deathSFX.Play();
-        deathSFX.Stop();
         playerMovementScript.enabled = false;
         predictionPoint.SetActive(false);
         speedlineGO.SetActive(false);
@@ -79,6 +78,7 @@ public class PlayerCollision : MonoBehaviour
     IEnumerator PlayerDeath()
     {
         yield return new WaitForSeconds(2);
+        deathSFX.Stop();
         deathCanvas.SetActive(true);
     }
 }

@@ -69,7 +69,7 @@ public class DeathProgress : MonoBehaviour
                 currentScore += Time.deltaTime * accel;
                 progressbarSFX.gameObject.SetActive(true);
                 progressbarSFX.pitch += Time.deltaTime * 0.1f;
-                accel += Time.deltaTime * 20;
+                accel += Time.deltaTime * 100;
             }
 
             if (currentScore >= addedScore)

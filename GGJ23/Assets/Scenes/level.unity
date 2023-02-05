@@ -13332,7 +13332,7 @@ MonoBehaviour:
   maxSpeedText: {fileID: 1516213784}
   scoreCounterScript: {fileID: 556560312}
   barImage: {fileID: 1276250533}
-  target: 500
+  target: 5000
   currentScore: 0
   gainedScore: 0
   addedScore: 0
